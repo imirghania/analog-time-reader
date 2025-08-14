@@ -1,0 +1,9 @@
+[project]
+name = "analog-watch-reader"
+version = "0.1.0"
+description = "This project aims to read time from analog watches."
+readme = "README.md"
+requires-python = ">=3.12.7"
+dependencies = [
+    "dvc>=3.62.0",
+]

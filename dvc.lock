@@ -1,0 +1,42 @@
+schema: '2.0'
+stages:
+  convert_ann_ls_yolo:
+    cmd: python -m src.watch_recognition.data_processing.convert_kp_ls_yolo 
+      annotations/keypoints/labelstudio/kp_annotations.json
+    deps:
+    - path: annotations/keypoints/labelstudio/kp_annotations.json
+      hash: md5
+      md5: 03d009f503a34b1252cf445918df58f3
+      size: 4186757
+    - path: src/watch_recognition/data_processing/convert_kp_ls_yolo.py
+      hash: md5
+      md5: 4b73885039fccbd3a72d87f1d0ecec77
+      size: 5413
+    outs:
+    - path: annotations/keypoints/yolo
+      hash: md5
+      md5: 7cf684c8936c3bb9a4a04a78e3e5c8e7.dir
+      size: 400029
+      nfiles: 1200
+  generate_yolo_dataset:
+    cmd: python -m src.watch_recognition.data_processing.generate_yolo_dataset 
+      -a annotations/keypoints/yolo/
+    deps:
+    - path: annotations/keypoints/yolo/
+      hash: md5
+      md5: 7cf684c8936c3bb9a4a04a78e3e5c8e7.dir
+      size: 400029
+      nfiles: 1200
+    - path: src/watch_recognition/data_processing/generate_yolo_dataset.py
+      hash: md5
+      md5: d68f3d6b42cc6d1ffb8c7ade4c3801ae
+      size: 4419
+    params:
+      params.yaml:
+        yolo_dataset_gen.img_num: 1000
+    outs:
+    - path: datasets/yolo
+      hash: md5
+      md5: 3b11130c6f4909f2c09b28c70034ac84.dir
+      size: 78741821
+      nfiles: 2500

@@ -16,7 +16,7 @@ parser.add_argument("input",
                 help="The name of the label-studio annotations file.")
 
 # output_dir = HOME/"annotations/keypoints/yolo"
-output_dir = HOME/PATHS.output_dir
+output_dir = HOME/PATHS.yolo_annotations_dir
 parser.add_argument("-o", "--output_dir",
                 default=output_dir,
                 help="Path to the YOLO annotations output directory.")
@@ -30,8 +30,9 @@ parser.add_argument("-d", "--dimensions",
 args = parser.parse_args()
 
 # ls_annotations_file = HOME/f"annotations/labelstudio/{args.input}"
-ls_annotations_file = f"{PATHS.ls_annotations_dir}/{args.input}"
-ls_annotations_file_abs = HOME / ls_annotations_file
+# ls_annotations_file = f"{PATHS.ls_annotations_dir}/{args.input}"
+# ls_annotations_file_abs = HOME / ls_annotations_file
+ls_annotations_file_abs = HOME / args.input
 
 def convert_ls_to_yolo_kpt(ls_json_file, output_dir, class_map, dims=3):
     # Ensure output directory exists and empty

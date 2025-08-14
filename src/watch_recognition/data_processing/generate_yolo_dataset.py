@@ -16,10 +16,6 @@ parser = argparse.ArgumentParser(
     prog="yolo-dataset-generator", 
     description="Generate a YOLO dataset by matching YOLO annotations to their corresponding image files.")
 
-parser.add_argument("training_images_number",
-        type=int,
-        help="Number of training images to generate (It MUST be less than the number of the annotations).")
-
 parser.add_argument("-a", "--annotations-dir",
         default=annotations_dir,
         help="The directory containing the YOLO annotations files.")
@@ -120,7 +116,12 @@ def generate_yolo_dataset(original_images_dir:Path,
 
 
 if __name__ == "__main__":
-    generate_yolo_dataset(args.raw_images_dir,
-                        args.annotations_dir, 
-                        args.output_dir,
-                        args.training_images_number)
+    import yaml
+    params = yaml.safe_load(
+        open(HOME/"params.yaml")
+        )["yolo_dataset_gen"]
+    generate_yolo_dataset(Path(args.raw_images_dir),
+                        Path(args.annotations_dir), 
+                        Path(args.output_dir),
+                        params["img_num"],
+                        args.include_test)

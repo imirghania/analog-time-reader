@@ -1,5 +1,5 @@
 [project]
-name = "analog-watch-reader"
+name = "watch-recognition"
 version = "0.1.0"
 description = "This project aims to read time from analog watches."
 readme = "README.md"
@@ -8,4 +8,8 @@ dependencies = [
     "dvc>=3.62.0",
     "ipykernel>=6.30.1",
     "label-studio>=1.20.0",
+    "matplotlib>=3.10.5",
+    "pyyaml>=6.0.2",
+    "scikit-image>=0.25.2",
+    "scipy>=1.16.1",
 ]

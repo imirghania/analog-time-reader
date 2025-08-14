@@ -1,0 +1,5 @@
+outs:
+- md5: 03d009f503a34b1252cf445918df58f3
+  size: 4186757
+  hash: md5
+  path: kp_annotations.json

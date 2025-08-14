@@ -1,0 +1,3 @@
+export LABEL_STUDIO_ALLOWED_HOSTS=*
+export LABEL_STUDIO_LOCAL_FILES_SERVING_ENABLED=true
+export LABEL_STUDIO_LOCAL_FILES_DOCUMENT_ROOT=/home/ubuntu_wsl/computer_vision/analog_watch_reader/datasets

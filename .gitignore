@@ -194,4 +194,6 @@ cython_debug/
 .cursorindexingignore
 
 datasets/original/
-annotations/keypoints/labelstudio/kp_annotations.json
+datasets/yolo/
+annotations/
+datasets/

@@ -1,0 +1,12 @@
+path: ../../datasets/yolo
+train: train/images
+val: val/images
+test: test/images
+
+# Keypoints
+kpt_shape: [7, 3] # number of keypoints, number of dims (2 for x,y or 3 for x,y,visible)
+flip_idx: [5, 1, 2, 3, 6, 0, 4]
+
+# Classes dictionary
+names:
+  0: clock

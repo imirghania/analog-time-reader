@@ -12,6 +12,6 @@ stages:
       - src/watch_recognition/data_processing/generate_yolo_dataset.py
       - annotations/keypoints/yolo/
     params:
-      - yolo_dataset_gen.img_num
+      - yolo_dataset_gen.train_imgs_num
     outs:
       - datasets/yolo

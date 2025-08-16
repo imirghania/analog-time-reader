@@ -123,5 +123,5 @@ if __name__ == "__main__":
     generate_yolo_dataset(Path(args.raw_images_dir),
                         Path(args.annotations_dir), 
                         Path(args.output_dir),
-                        params["img_num"],
+                        params["train_imgs_num"],
                         args.include_test)

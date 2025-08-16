@@ -1,2 +1,2 @@
 yolo_dataset_gen:
-  img_num: 1000
+  train_imgs_num: 1000

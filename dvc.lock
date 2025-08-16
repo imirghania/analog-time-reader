@@ -29,14 +29,14 @@ stages:
       nfiles: 1200
     - path: src/watch_recognition/data_processing/generate_yolo_dataset.py
       hash: md5
-      md5: d68f3d6b42cc6d1ffb8c7ade4c3801ae
-      size: 4419
+      md5: ff7c4b13712c64834c1e1889ca977936
+      size: 4426
     params:
       params.yaml:
-        yolo_dataset_gen.img_num: 1000
+        yolo_dataset_gen.train_imgs_num: 1000
     outs:
     - path: datasets/yolo
       hash: md5
-      md5: 3b11130c6f4909f2c09b28c70034ac84.dir
-      size: 78741821
+      md5: a2ef95f17a604daf0cd6e39470e68e13.dir
+      size: 86723979
       nfiles: 2500

@@ -59,6 +59,12 @@ def main(model_path: Path, data_yaml: Path = None):
             "pose": clean_pose_metrics
         }
         live.log_image("confusion_matrix.png", plt.gcf())
+        live.log_artifact(
+            model_path,
+            type="model",
+            name=f"{model_path.stem}",
+            desc=f"YOLO model weights ({model_path.name})"
+        )
     
     plt.close()
 

@@ -29,3 +29,8 @@ metrics:
 - dvclive/metrics.json
 plots:
 - dvclive/plots/images
+artifacts:
+  best:
+    path: models/keypoints/best.pt
+    type: model
+    desc: YOLO model weights (best.pt)

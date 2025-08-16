@@ -53,8 +53,8 @@ stages:
       size: 466
     - path: src/watch_recognition/evaluation.py
       hash: md5
-      md5: 5e2cebb77402025aecf02fbfc18f6fce
-      size: 2365
+      md5: 427df9cfd637edfb42f3572667d65fc0
+      size: 2550
     outs:
     - path: dvclive
       hash: md5

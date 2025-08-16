@@ -1,17 +1,31 @@
 stages:
   convert_ann_ls_yolo:
-    cmd: python -m src.watch_recognition.data_processing.convert_kp_ls_yolo annotations/keypoints/labelstudio/kp_annotations.json
+    cmd: python -m src.watch_recognition.data_processing.convert_kp_ls_yolo 
+      annotations/keypoints/labelstudio/kp_annotations.json
     deps:
-      - src/watch_recognition/data_processing/convert_kp_ls_yolo.py
-      - annotations/keypoints/labelstudio/kp_annotations.json
+    - src/watch_recognition/data_processing/convert_kp_ls_yolo.py
+    - annotations/keypoints/labelstudio/kp_annotations.json
     outs:
-      - annotations/keypoints/yolo
+    - annotations/keypoints/yolo
   generate_yolo_dataset:
-    cmd: python -m src.watch_recognition.data_processing.generate_yolo_dataset -a annotations/keypoints/yolo/
+    cmd: python -m src.watch_recognition.data_processing.generate_yolo_dataset 
+      -a annotations/keypoints/yolo/
     deps:
-      - src/watch_recognition/data_processing/generate_yolo_dataset.py
-      - annotations/keypoints/yolo/
+    - src/watch_recognition/data_processing/generate_yolo_dataset.py
+    - annotations/keypoints/yolo/
     params:
-      - yolo_dataset_gen.train_imgs_num
+    - yolo_dataset_gen.train_imgs_num
     outs:
-      - datasets/yolo
+    - datasets/yolo
+  evaluate:
+    cmd: python -m src.watch_recognition.evaluation models/keypoints/best.pt
+    deps:
+    - src/watch_recognition/evaluation.py
+    - src/watch_recognition/config/data.yaml
+    - models/keypoints/best.pt
+    outs:
+    - dvclive
+metrics:
+- dvclive/metrics.json
+plots:
+- dvclive/plots/images

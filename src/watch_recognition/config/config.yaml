@@ -3,3 +3,4 @@ paths:
   yolo_dataset_dir: 'datasets/yolo'
   yolo_annotations_dir: 'annotations/keypoints/yolo'
   ls_annotations_dir: 'annotations/keypoints/labelstudio'
+  models_dir: 'models'

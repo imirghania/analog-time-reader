@@ -1,12 +1,21 @@
-path: ../../datasets/yolo
+# path: ../../datasets/yolo   # notebook: 03-inference.ipynb
+path: datasets/yolo # script: watch_recog/evaluation
 train: train/images
 val: val/images
 test: test/images
 
 # Keypoints
 kpt_shape: [7, 3] # number of keypoints, number of dims (2 for x,y or 3 for x,y,visible)
+
+# Original keypoints order
+# 0- 12_oclock
+# 1- clock_center
+# 2- hours_hand_tip
+# 3- minutes_hand_tip
+# 4- 3_oclock
+# 5- 6_oclock
+# 6- 9_oclock
 flip_idx: [5, 1, 2, 3, 6, 0, 4]
 
-# Classes dictionary
 names:
   0: clock

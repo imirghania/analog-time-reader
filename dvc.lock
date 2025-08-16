@@ -40,3 +40,24 @@ stages:
       md5: a2ef95f17a604daf0cd6e39470e68e13.dir
       size: 86723979
       nfiles: 2500
+  evaluate:
+    cmd: python -m src.watch_recognition.evaluation models/keypoints/best.pt
+    deps:
+    - path: models/keypoints/best.pt
+      hash: md5
+      md5: 857bb62b012677d551f00b07290abfb8
+      size: 52938026
+    - path: src/watch_recognition/config/data.yaml
+      hash: md5
+      md5: 0564ea5ff4def92ba41caa65e9142feb
+      size: 466
+    - path: src/watch_recognition/evaluation.py
+      hash: md5
+      md5: 5e2cebb77402025aecf02fbfc18f6fce
+      size: 2365
+    outs:
+    - path: dvclive
+      hash: md5
+      md5: 83ab8d720225f7f73ad818814ad20635.dir
+      size: 19375
+      nfiles: 2

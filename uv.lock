@@ -1118,6 +1118,26 @@ wheels = [
 ]
 
 [[package]]
+name = "dvclive"
+version = "3.48.4"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "dvc" },
+    { name = "dvc-render" },
+    { name = "dvc-studio-client" },
+    { name = "funcy" },
+    { name = "gto" },
+    { name = "psutil" },
+    { name = "pynvml" },
+    { name = "ruamel-yaml" },
+    { name = "scmrepo" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/a0/26/22339a6e2e829d6be5419fc3fdef9bd505f8eb09ab411e2d1a9d5c84496c/dvclive-3.48.4.tar.gz", hash = "sha256:2fdf9854bfb913960ed613c2b4ea043f9e6e6b9244a9f85456ae881ec4dbcbd6", size = 2042989, upload-time = "2025-08-04T13:01:44.146Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/31/e7/ddbbc2b5e454ad1fc78e288113f6eb275a5f9ef922e33bdb306b729d6e19/dvclive-3.48.4-py3-none-any.whl", hash = "sha256:43824e9917504f47818fe5ed3d4d84e6b74fd68bf1b3704636674198c52c1805", size = 44054, upload-time = "2025-08-04T13:01:42.775Z" },
+]
+
+[[package]]
 name = "email-validator"
 version = "2.2.0"
 source = { registry = "https://pypi.org/simple" }
@@ -2661,6 +2681,15 @@ wheels = [
 ]
 
 [[package]]
+name = "nvidia-ml-py"
+version = "12.575.51"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/d2/4d/6f017814ed5ac28e08e1b8a62e3a258957da27582c89b7f8f8b15ac3d2e7/nvidia_ml_py-12.575.51.tar.gz", hash = "sha256:6490e93fea99eb4e966327ae18c6eec6256194c921f23459c8767aee28c54581", size = 46597, upload-time = "2025-05-06T20:46:37.962Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/db/24/552ebea28f0570b9e65e62b50287a273804c9f997cc1c2dcd4e2d64b9e7d/nvidia_ml_py-12.575.51-py3-none-any.whl", hash = "sha256:eb8641800d98ce40a22f479873f34b482e214a7e80349c63be51c3919845446e", size = 47547, upload-time = "2025-05-06T20:46:36.457Z" },
+]
+
+[[package]]
 name = "nvidia-nccl-cu12"
 version = "2.27.3"
 source = { registry = "https://pypi.org/simple" }
@@ -3312,6 +3341,18 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/e7/46/bd74733ff231675599650d3e47f361794b22ef3e3770998dda30d3b63726/pyjwt-2.10.1.tar.gz", hash = "sha256:3cc5772eb20009233caf06e9d8a0577824723b44e6648ee0a2aedb6cf9381953", size = 87785, upload-time = "2024-11-28T03:43:29.933Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/61/ad/689f02752eeec26aed679477e80e632ef1b682313be70793d798c1d5fc8f/PyJWT-2.10.1-py3-none-any.whl", hash = "sha256:dcdd193e30abefd5debf142f9adfcdd2b58004e644f25406ffaebd50bd98dacb", size = 22997, upload-time = "2024-11-28T03:43:27.893Z" },
+]
+
+[[package]]
+name = "pynvml"
+version = "12.0.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "nvidia-ml-py" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/26/6f/6b5880ed0239e85b9a39aed103b65b2ef81425beef9f45e5c035bf008330/pynvml-12.0.0.tar.gz", hash = "sha256:299ce2451a6a17e6822d6faee750103e25b415f06f59abb8db65d30f794166f5", size = 33636, upload-time = "2024-12-02T15:04:36.631Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ed/df/f7cf07a65a96dd11d71f346f9c2863accdd4784da83af7181b067d556cbc/pynvml-12.0.0-py3-none-any.whl", hash = "sha256:fdff84b62a27dbe98e08e1a647eb77342bef1aebe0878bcd15e99a83fcbecb9e", size = 26560, upload-time = "2024-12-02T15:04:35.047Z" },
 ]
 
 [[package]]
@@ -4364,6 +4405,7 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "dvc" },
+    { name = "dvclive" },
     { name = "ipykernel" },
     { name = "label-studio" },
     { name = "matplotlib" },
@@ -4379,6 +4421,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "dvc", specifier = ">=3.62.0" },
+    { name = "dvclive", specifier = ">=3.48.4" },
     { name = "ipykernel", specifier = ">=6.30.1" },
     { name = "label-studio", specifier = ">=1.20.0" },
     { name = "matplotlib", specifier = ">=3.10.5" },

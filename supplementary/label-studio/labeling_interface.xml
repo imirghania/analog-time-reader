@@ -1,0 +1,17 @@
+<View>
+  <RectangleLabels name="keypoints_bbox" toName="image" model_skip="true">
+    <Label value="clock" background="#fa9e00"/>
+  </RectangleLabels>
+  
+  <KeyPointLabels name="keypoints" toName="image" model_score_threshold="0.75" model_point_threshold="0.5" model_add_bboxes="true" model_point_size="1" model_path="yolo11l-pose.pt">
+    <Label value="12_oclock" predicted_values="clock" model_index="0" background="red"/>
+    <Label value="clock_center" predicted_values="clock" model_index="1" background="#1eff00"/>
+    <Label value="hour_hand" predicted_values="clock" model_index="2" background="#ff00c8"/>
+    <Label value="minute_hand" predicted_values="clock" model_index="3" background="#00eeff"/>
+    <Label value="3_oclock" predicted_values="clock" model_index="4" background="red"/>
+    <Label value="6_oclock" predicted_values="clock" model_index="5" background="red"/>
+    <Label value="9_oclock" predicted_values="clock" model_index="6" background="red"/>
+  </KeyPointLabels>
+  
+  <Image name="image" value="$image" zoom="true" zoomControl="true" rotateControl="true"/>
+</View>

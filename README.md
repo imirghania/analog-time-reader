@@ -1,6 +1,6 @@
 # Analog Watch Time Recognition
 
-![Project Banner](examples/example1.png)
+![Project Banner](supplementary/examples/example1.png)
 
 A computer vision system that detects analog watches and recognizes their time using YOLOv11 for object detection and keypoint estimation.
 
@@ -21,8 +21,34 @@ A computer vision system that detects analog watches and recognizes their time u
    ```
 
 2. **Install dependencies**:
-   This project uses [`uv`](https://docs.astral.sh/uv/) package manager,
+   This project uses [`uv`](https://docs.astral.sh/uv/) package manager.
 
    ```bash
    uv sync
    ```
+
+## Extend/Reproducibility Setup
+
+- Create the following directories structure:
+
+```bash
+├── annotations
+│   └── keypoints
+│       ├── labelstudio
+│       └── yolo
+├── datasets
+│   ├── original
+│   └── yolo
+├── models
+│   └── keypoints
+```
+
+- The _RAW_ images go inside `datasets/original`.
+- The annotations from Label-studio should be exported in `json` format and placed inside `annotations/keypoints/labelstudio`.
+- The trained models go into `models`. Each to its respective type `models/<model-type>`.
+- Modify `dvc.yaml` at the root directory according to the names of the annotation file and the model file.
+- Run the following command:
+
+```bash
+dvc repro
+```

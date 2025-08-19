@@ -45,31 +45,16 @@ A computer vision system that detects analog watches and recognizes their time u
    - Add the following directory structure to the root directory:
 
    ```bash
-   analog_watch_recognition/
-   ├── src/
-   │   └── watch_recognition/
-   │       ├── inference.py          # Main inference script
-   │       ├── geometry_elements.py  # Geometric primitives
-   │       ├── utils.py              # Utility functions
-   │       ├── data_processing
-   │       │   ├── convert_kp_ls_yolo.py
-   │       │   └── generate_yolo_dataset.py
-   │       └── config/
-   │           └── config.yaml       # Configuration file
+   analog_watch_recognition/         # Root
    ├── annotations/
    │   └── keypoints/
    │       ├── labelstudio/          # Label Studio annotations
    │       └── yolo/                 # YOLO format annotations
    ├── datasets/
    │   ├── original/                 # Raw images
-   │   └── yolo/                     # Processed YOLO dataset
+   │   └── yolo/                     # Generated YOLO dataset
    ├── models/
    │   └── keypoints/                # Trained models
-   ├── test_images/
-   │   ├── raw/                      # Input test images
-   │   └── output/                   # Processed results
-   └── supplementary/
-       └── examples/                 # Example outputs
    ```
 
 4. **🚀 Usage**:

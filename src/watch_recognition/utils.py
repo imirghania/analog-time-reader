@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from typing import Tuple
-from geometry_elements import Point, Line
+from .geometry_elements import Point, Line
 
 
 def unit_vector(vector):

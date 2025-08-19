@@ -13,6 +13,12 @@ A computer vision system that detects analog watches and recognizes their time u
 
 ## Installation
 
+### Prerequisites
+
+- Python 3.10+
+- [UV package manager](https://docs.astral.sh/uv/) (recommended) or pip
+- GPU support recommended for faster inference
+
 1. **Clone the repository**:
 
    ```bash
@@ -21,34 +27,102 @@ A computer vision system that detects analog watches and recognizes their time u
    ```
 
 2. **Install dependencies**:
-   This project uses [`uv`](https://docs.astral.sh/uv/) package manager.
+
+   - Using **_uv_**.
 
    ```bash
    uv sync
    ```
 
-## Extend/Reproducibility Setup
+   - Using **_pip_**.
 
-- Create the following directories structure:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **🏗️ Project Structure**:
+
+   - Add the following directory structure to the root directory:
+
+   ```bash
+   analog_watch_recognition/
+   ├── src/
+   │   └── watch_recognition/
+   │       ├── inference.py          # Main inference script
+   │       ├── geometry_elements.py  # Geometric primitives
+   │       ├── utils.py              # Utility functions
+   │       ├── data_processing
+   │       │   ├── convert_kp_ls_yolo.py
+   │       │   └── generate_yolo_dataset.py
+   │       └── config/
+   │           └── config.yaml       # Configuration file
+   ├── annotations/
+   │   └── keypoints/
+   │       ├── labelstudio/          # Label Studio annotations
+   │       └── yolo/                 # YOLO format annotations
+   ├── datasets/
+   │   ├── original/                 # Raw images
+   │   └── yolo/                     # Processed YOLO dataset
+   ├── models/
+   │   └── keypoints/                # Trained models
+   ├── test_images/
+   │   ├── raw/                      # Input test images
+   │   └── output/                   # Processed results
+   └── supplementary/
+       └── examples/                 # Example outputs
+   ```
+
+   > [!NOTE]
+   > Add The missing directories. In case you choose to set up a different directory structure, you may need to modify `src/watch_recognition/config/config.yaml` accordingly.
+
+4. **🚀 Usage**:
+
+   ### Command Line Interface
+
+   The main inference script provides a simple CLI for watch detection and time recognition:
+
+   ```bash
+    # Show help
+   python -m src.watch_recognition.inference -h
+
+   # Basic usage
+   python -m src.watch_recognition.inference \
+     -i test_images/raw/1.jpg \
+     -o test_images/output
+
+   # With custom model and hand visualization
+   python -m src.watch_recognition.inference \
+     -i input_image.jpg \
+     -o output_directory/ \
+     -m models/keypoints/custom.pt \
+     --draw-hands
+   ```
+
+5. **🔧 Configuration**:
+
+   ### Dataset Setup
+
+   1. Place raw images in datasets/original/
+
+   2. Export Label Studio annotations to `annotations/keypoints/labelstudio/` (JSON format)
+
+   3. Update `dvc.yaml` with your annotation and model filenames.
+
+   ### Custom Directory Structure
+
+   ```yaml
+   paths:
+   output_dir: 'annotations/keypoints/yolo'
+   ls_annotations_folder: 'annotations/keypoints/labelstudio'
+   ```
+
+6. **🔄 Reproducibility**:
 
 ```bash
-├── annotations
-│   └── keypoints
-│       ├── labelstudio
-│       └── yolo
-├── datasets
-│   ├── original
-│   └── yolo
-├── models
-│   └── keypoints
-```
-
-- The _RAW_ images go inside `datasets/original`.
-- The annotations from Label-studio should be exported in `json` format and placed inside `annotations/keypoints/labelstudio`.
-- The trained models go into `models`. Each to its respective type `models/<model-type>`.
-- Modify `dvc.yaml` at the root directory according to the names of the annotation file and the model file.
-- Run the following command:
-
-```bash
+# Run the complete pipeline
 dvc repro
+
+# Run specific stages
+dvc repro convert_ann_ls_yolo
+dvc repro generate_yolo_dataset
 ```

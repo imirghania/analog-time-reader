@@ -100,11 +100,11 @@ A computer vision system that detects analog watches and recognizes their time u
 
 6. **🔄 Reproducibility**:
 
-```bash
-# Run the complete pipeline
-dvc repro
+   ```bash
+   # Run the complete pipeline
+   dvc repro
 
-# Run specific stages
-dvc repro convert_ann_ls_yolo
-dvc repro generate_yolo_dataset
-```
+   # Run specific stages
+   dvc repro convert_ann_ls_yolo
+   dvc repro generate_yolo_dataset
+   ```

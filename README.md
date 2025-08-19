@@ -28,13 +28,13 @@ A computer vision system that detects analog watches and recognizes their time u
 
 2. **Install dependencies**:
 
-   - Using **_uv_**.
+   - Using _uv_.
 
    ```bash
    uv sync
    ```
 
-   - Using **_pip_**.
+   - Using _pip_.
 
    ```bash
    pip install -r requirements.txt
@@ -72,12 +72,9 @@ A computer vision system that detects analog watches and recognizes their time u
        └── examples/                 # Example outputs
    ```
 
-   > [!NOTE]
-   > Add The missing directories. In case you choose to set up a different directory structure, you may need to modify `src/watch_recognition/config/config.yaml` accordingly.
-
 4. **🚀 Usage**:
 
-   ### Command Line Interface
+   **Command Line Interface**
 
    The main inference script provides a simple CLI for watch detection and time recognition:
 
@@ -100,7 +97,7 @@ A computer vision system that detects analog watches and recognizes their time u
 
 5. **🔧 Configuration**:
 
-   ### Dataset Setup
+   **Dataset Setup**
 
    1. Place raw images in datasets/original/
 
@@ -108,7 +105,7 @@ A computer vision system that detects analog watches and recognizes their time u
 
    3. Update `dvc.yaml` with your annotation and model filenames.
 
-   ### Custom Directory Structure
+   **Custom Directory Structure**
 
    ```yaml
    paths:

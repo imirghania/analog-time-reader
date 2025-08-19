@@ -92,6 +92,8 @@ A computer vision system that detects analog watches and recognizes their time u
 
    **Custom Directory Structure**
 
+   Modify the `src/watch_recognition/config/config.yaml` file.
+
    ```yaml
    paths:
    output_dir: 'annotations/keypoints/yolo'

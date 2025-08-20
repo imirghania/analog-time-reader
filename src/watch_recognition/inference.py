@@ -165,5 +165,6 @@ if __name__ == "__main__":
     
     annotate_image(Path(args.input), 
                 Path(args.output), 
-                Path(args.model)
-                )
+                Path(args.model),
+                args.home,
+                args.draw_hands)

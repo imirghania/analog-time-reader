@@ -45,7 +45,7 @@ stages:
     deps:
     - path: models/keypoints/best.pt
       hash: md5
-      md5: c14e5753edf180fda24f71ad2edb2b65
+      md5: a2975bd3a32ac8182393ea873efc4d40
       size: 52920170
     - path: src/watch_recognition/config/data.yaml
       hash: md5
@@ -58,6 +58,6 @@ stages:
     outs:
     - path: dvclive
       hash: md5
-      md5: 34952ea01370c8f2f2163b6ab0b7b79f.dir
-      size: 20377
+      md5: 58f628cea73f27d9aa2361fba3bb4015.dir
+      size: 20048
       nfiles: 2

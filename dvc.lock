@@ -6,8 +6,8 @@ stages:
     deps:
     - path: annotations/keypoints/labelstudio/kp_annotations.json
       hash: md5
-      md5: 9867f7daaa79f530c67a8dd40845b216
-      size: 5081298
+      md5: 95f112d7efc84e8e778874e38e0e5f90
+      size: 6113919
     - path: src/watch_recognition/data_processing/convert_kp_ls_yolo.py
       hash: md5
       md5: 4b73885039fccbd3a72d87f1d0ecec77
@@ -15,18 +15,18 @@ stages:
     outs:
     - path: annotations/keypoints/yolo
       hash: md5
-      md5: a01c3249613bf1e23242648459b94107.dir
-      size: 498843
-      nfiles: 1250
+      md5: 34d53ba93559441909051f956358eb5f.dir
+      size: 598295
+      nfiles: 1500
   generate_yolo_dataset:
     cmd: python -m src.watch_recognition.data_processing.generate_yolo_dataset 
       -a annotations/keypoints/yolo/
     deps:
     - path: annotations/keypoints/yolo/
       hash: md5
-      md5: a01c3249613bf1e23242648459b94107.dir
-      size: 498843
-      nfiles: 1250
+      md5: 34d53ba93559441909051f956358eb5f.dir
+      size: 598295
+      nfiles: 1500
     - path: src/watch_recognition/data_processing/generate_yolo_dataset.py
       hash: md5
       md5: ff7c4b13712c64834c1e1889ca977936
@@ -37,16 +37,16 @@ stages:
     outs:
     - path: datasets/yolo
       hash: md5
-      md5: 7e1e46d6027a9504a3347b711409fa11.dir
-      size: 81675553
-      nfiles: 2600
+      md5: df2fe204a82bae613d2d8b04571b7a1a.dir
+      size: 102284853
+      nfiles: 3100
   evaluate:
     cmd: python -m src.watch_recognition.evaluation models/keypoints/best.pt
     deps:
     - path: models/keypoints/best.pt
       hash: md5
-      md5: c41536ca89c0f6162cc73f35a01e4263
-      size: 52928746
+      md5: c14e5753edf180fda24f71ad2edb2b65
+      size: 52920170
     - path: src/watch_recognition/config/data.yaml
       hash: md5
       md5: 0564ea5ff4def92ba41caa65e9142feb
@@ -58,6 +58,6 @@ stages:
     outs:
     - path: dvclive
       hash: md5
-      md5: 6597028c02794adfbd2848dac23059ac.dir
-      size: 20276
+      md5: 34952ea01370c8f2f2163b6ab0b7b79f.dir
+      size: 20377
       nfiles: 2
